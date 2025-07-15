@@ -9,6 +9,7 @@
 .app__main {
   flex: 1;
   padding-top: 80px; /* Altura del header fijo */
+  width: 100%; /* Asegurar que ocupe todo el ancho */
 }
 
 /* Reset básico */
@@ -23,6 +24,7 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #f8f9fa;
+  overflow-x: hidden; /* Prevenir scroll horizontal */
 }
 
 /* Variables CSS */
@@ -43,9 +45,10 @@ body {
 
 /* Utilidades */
 .container {
-  max-width: 1200px;
+  max-width: 1400px; /* Aumentado para más ancho */
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
 }
 
 .btn {
@@ -92,6 +95,12 @@ body {
 }
 
 /* Responsive */
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 15px;
