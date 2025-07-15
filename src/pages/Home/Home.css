@@ -1,0 +1,142 @@
+/* Home.css - Estilos de la página Home usando BEM */
+
+.home {
+  min-height: calc(100vh - 80px);
+}
+
+.home__section {
+  padding: 60px 0;
+}
+
+.home__section--alt {
+  background-color: var(--light-gray);
+}
+
+.home__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.home__section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.home__section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.home__section-link {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.home__section-link:hover {
+  color: #2980b9;
+}
+
+.home__books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.home__cta {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #2980b9 100%);
+  color: var(--white);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.home__cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.home__cta-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+
+.home__cta-text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 30px 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.home__cta-button {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: var(--white);
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.home__cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home__section {
+    padding: 40px 0;
+  }
+
+  .home__container {
+    padding: 0 15px;
+  }
+
+  .home__section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .home__section-title {
+    font-size: 28px;
+  }
+
+  .home__books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .home__cta {
+    padding: 60px 0;
+  }
+
+  .home__cta-title {
+    font-size: 28px;
+  }
+
+  .home__cta-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home__books-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home__cta-title {
+    font-size: 24px;
+  }
+}

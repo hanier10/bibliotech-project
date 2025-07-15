@@ -1,0 +1,103 @@
+/* App.css - Estilos principales usando metodología BEM */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__main {
+  flex: 1;
+  padding-top: 80px; /* Altura del header fijo */
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Variables CSS */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --light-gray: #ecf0f1;
+  --medium-gray: #bdc3c7;
+  --dark-gray: #7f8c8d;
+  --white: #ffffff;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+/* Utilidades */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn--primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  background-color: #34495e;
+  transform: translateY(-2px);
+}
+
+.btn--secondary {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.btn--secondary:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.btn--danger {
+  background-color: var(--accent-color);
+  color: var(--white);
+}
+
+.btn--danger:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .app__main {
+    padding-top: 70px;
+  }
+}

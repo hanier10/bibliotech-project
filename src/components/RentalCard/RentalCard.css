@@ -1,0 +1,158 @@
+/* RentalCard.css - Estilos del componente RentalCard usando BEM */
+
+.rental-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  border-left: 4px solid var(--success-color);
+}
+
+.rental-card--overdue {
+  border-left-color: var(--accent-color);
+}
+
+.rental-card--due-soon {
+  border-left-color: var(--warning-color);
+}
+
+.rental-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.rental-card__image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.rental-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rental-card__content {
+  padding: 20px;
+  flex: 1;
+}
+
+.rental-card__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.rental-card__author {
+  color: var(--dark-gray);
+  font-size: 14px;
+  margin: 0 0 15px 0;
+}
+
+.rental-card__dates {
+  margin-bottom: 15px;
+}
+
+.rental-card__date {
+  font-size: 13px;
+  color: var(--dark-gray);
+  margin: 0 0 5px 0;
+}
+
+.rental-card__status {
+  margin-bottom: 20px;
+}
+
+.rental-card__status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.rental-card__status-badge--active {
+  background-color: rgba(39, 174, 96, 0.1);
+  color: var(--success-color);
+}
+
+.rental-card__status-badge--due-soon {
+  background-color: rgba(243, 156, 18, 0.1);
+  color: var(--warning-color);
+}
+
+.rental-card__status-badge--overdue {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--accent-color);
+}
+
+.rental-card__actions {
+  padding: 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rental-card__button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.rental-card__button--primary {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.rental-card__button--primary:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+.rental-card__button--secondary {
+  background-color: var(--light-gray);
+  color: var(--primary-color);
+}
+
+.rental-card__button--secondary:hover {
+  background-color: var(--medium-gray);
+  transform: translateY(-1px);
+}
+
+.rental-card__button--danger {
+  background-color: var(--accent-color);
+  color: var(--white);
+}
+
+.rental-card__button--danger:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .rental-card__content {
+    padding: 15px;
+  }
+
+  .rental-card__actions {
+    padding: 0 15px 15px;
+  }
+
+  .rental-card__title {
+    font-size: 16px;
+  }
+}

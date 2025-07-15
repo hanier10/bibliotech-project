@@ -1,0 +1,119 @@
+/* SearchBar.css - Estilos del componente SearchBar usando BEM */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.search-bar__form {
+  flex: 1;
+}
+
+.search-bar__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar__input {
+  width: 100%;
+  padding: 15px 50px 15px 20px;
+  border: 2px solid var(--medium-gray);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  background-color: var(--white);
+  transition: var(--transition);
+}
+
+.search-bar__input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.search-bar__input::placeholder {
+  color: var(--dark-gray);
+}
+
+.search-bar__button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: var(--dark-gray);
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+}
+
+.search-bar__button:hover {
+  color: var(--secondary-color);
+  background-color: var(--light-gray);
+}
+
+.search-bar__icon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+.search-bar__advanced {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 20px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.search-bar__advanced:hover {
+  background-color: #34495e;
+  transform: translateY(-2px);
+}
+
+.search-bar__advanced-icon {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-bar__form {
+    width: 100%;
+  }
+
+  .search-bar__input {
+    padding: 12px 45px 12px 15px;
+    font-size: 14px;
+  }
+
+  .search-bar__icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .search-bar__advanced {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+}

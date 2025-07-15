@@ -1,0 +1,91 @@
+/* FilterPanel.css - Estilos del componente FilterPanel usando BEM */
+
+.filter-panel {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 25px;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.filter-panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.filter-panel__title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.filter-panel__clear {
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.filter-panel__clear:hover {
+  background-color: var(--light-gray);
+}
+
+.filter-panel__group {
+  margin-bottom: 20px;
+}
+
+.filter-panel__label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.filter-panel__select,
+.filter-panel__input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--medium-gray);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  background-color: var(--white);
+  transition: var(--transition);
+}
+
+.filter-panel__select:focus,
+.filter-panel__input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+.filter-panel__year-range {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.filter-panel__input::placeholder {
+  color: var(--dark-gray);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filter-panel {
+    position: static;
+    margin-bottom: 20px;
+  }
+}

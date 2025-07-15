@@ -1,0 +1,207 @@
+/* AdvancedSearch.css - Estilos del componente AdvancedSearch usando BEM */
+
+.advanced-search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.advanced-search__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.advanced-search__modal {
+  position: relative;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: advanced-search-appear 0.3s ease-out;
+}
+
+@keyframes advanced-search-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.advanced-search__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.advanced-search__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.advanced-search__close {
+  background: none;
+  border: none;
+  color: var(--dark-gray);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.advanced-search__close:hover {
+  background-color: var(--light-gray);
+  color: var(--primary-color);
+}
+
+.advanced-search__close svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+.advanced-search__form {
+  padding: 30px;
+}
+
+.advanced-search__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.advanced-search__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.advanced-search__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.advanced-search__input,
+.advanced-search__select {
+  padding: 12px 15px;
+  border: 2px solid var(--medium-gray);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  background-color: var(--white);
+  transition: var(--transition);
+}
+
+.advanced-search__input:focus,
+.advanced-search__select:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.advanced-search__input::placeholder {
+  color: var(--dark-gray);
+}
+
+.advanced-search__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid var(--light-gray);
+}
+
+.advanced-search__button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  min-width: 120px;
+}
+
+.advanced-search__button--primary {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.advanced-search__button--primary:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.advanced-search__button--secondary {
+  background-color: var(--light-gray);
+  color: var(--primary-color);
+}
+
+.advanced-search__button--secondary:hover {
+  background-color: var(--medium-gray);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .advanced-search {
+    padding: 10px;
+  }
+
+  .advanced-search__modal {
+    max-height: 95vh;
+  }
+
+  .advanced-search__header {
+    padding: 20px;
+  }
+
+  .advanced-search__title {
+    font-size: 20px;
+  }
+
+  .advanced-search__form {
+    padding: 20px;
+  }
+
+  .advanced-search__grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .advanced-search__actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .advanced-search__button {
+    width: 100%;
+  }
+}
